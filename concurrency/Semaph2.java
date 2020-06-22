@@ -1,6 +1,23 @@
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 
+/**
+ * Implementation of a Semaphore using an AbstractQueuedSynchronizer.
+ *
+ * Interface for AbstractQueuedSyncrhonizer is:
+ *    tryAcquireShared(numOfResources);   // called from semaphore.acquire()
+ *    tryReleaseShared(numOfResources);   // called from semaphore.release()
+ *
+ * Internally, it uses AbstractQueuedSyncrhonizer.compareAndSetState/getState
+ *    as changes are enqueued.
+ *
+ * Semaphore uses AbstractQueuedSyncrhonizer:
+ *    acquire -> tryAcquireShared(1);
+ *    release -> tryReleaseShared(1);
+ *
+ * The key point is that IS NOT BLOCKING.
+ *
+ */
 public class Semaph2 {
   private static final class Semaphore {
     private class Sync extends AbstractQueuedSynchronizer {

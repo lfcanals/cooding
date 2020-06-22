@@ -1,6 +1,9 @@
 import java.util.concurrent.Semaphore;
 
 
+/**
+ * Semaphore usage using java.util.concurrent.Semaphore.
+ */
 public class Semaph1 {
   private final static Semaphore semaphore = new Semaphore(2, true);
 

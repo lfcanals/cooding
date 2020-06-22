@@ -1,6 +1,13 @@
 import java.util.concurrent.atomic.AtomicInteger;
 
 
+/**
+ * Semaphore using AtomicInteger.
+ *
+ * Like AbstractQueuedSyncrhonized but wihtout:
+ *    - queueing the threads (no order guaranteed)
+ *    - cannot monitor waiting threads.
+ */
 public class Semaph3 {
   private static final class Semaphore {
     private class Sync {
