@@ -1,5 +1,8 @@
 import java.util.*;
 
+/** 
+ * O(N*w) where N: number of elements, W:widest element
+ */
 public class Radix {
   public static int[] lsd(final int[] array) {
     final List<Integer>[] map = new List[10];
