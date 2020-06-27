@@ -1,7 +1,14 @@
 import java.util.*;
 
 /** 
- * O(N*w) where N: number of elements, W:widest element
+ * O(N*w) where N: number of elements, W:widest element.
+ *
+ * buckets[] = List[0,...,9];
+ * for(pow = 10,100,1000,....) {
+ *  for x in array: bucket[ x % pow ].add(x)
+ *
+ *  Dump buckets in order into array
+ * }
  */
 public class Radix {
   public static int[] lsd(final int[] array) {
