@@ -32,6 +32,18 @@ public class ColouringWelshPowell {
   }
 
   /**
+   * Sorts nodes in desc.degree order and colour them and non-neighbours.
+   * 
+   * In detail:
+   *    1.- Sort nodes descending degree order in a LIST
+   *    2.- While the LIST is not empty:
+   *    3.-   node = remove from LIST node with highest degree
+   *    4.-   colour node with new COLOUR  
+   *    5.-   for(node : LIST):
+   *    6.-     if(colour all neighbours(node) != COLOUR):
+   *    7.-       colour node with COLOUR
+   *    8.-       remove node from LIST      
+   *
    * @return a list of sets, each set contains nodes with same color.
    */
   public static List<Set<Integer>> welshPowell(final Graph graph) {

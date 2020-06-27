@@ -3,6 +3,15 @@ import java.util.*;
 /**
  * Ford Flukenson algorithm to calculate maximum flow in a graph.
  *
+ * The idea:
+ *    clone the graph to "residualGraph"
+ *
+ *    maxFlow = 0;
+ *    while( (path = residualGraph.=bfsPath(from, to)) != null ) {
+ *      maxResidualFlow = minimumFlow(path);
+ *      residualGraph.removeFlow( path, maxResidualFlow );
+ *      maxFlow += maxResidualFlow;
+ *    }
  */
 public class FordFlukerson {
   public static class Graph {
