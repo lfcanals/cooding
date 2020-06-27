@@ -23,7 +23,7 @@ public class Radix {
       // Classify all elements into arrays
       moreDigits = false;
       for(int i=0; i<array.length; i++) {
-        if(pow10<=array[i]*10) moreDigits = true;
+        if(pow10<array[i]+1) moreDigits = true;
         map[(array[i] % pow100)/pow10].add(array[i]);
       }
 
