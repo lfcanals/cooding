@@ -7,11 +7,11 @@ import java.util.*;
  * Lets see the idea for four elements: ABCD
  * 
  * The root is ABCD (level 0)
- * Childs of ABCD in level 1 are swap(parent,0,i) i=0,..3
- * Childs of ABCD in level 2 are swap(parent,1,i) i=1,..3
- * Childs of ABCD in level 3 are swap(parent,2,i) i=2,3
+ * Children of ABCD in level 1 are swap(parent,0,i) i=0,..3
+ * Children of ABCD in level 2 are swap(parent,1,i) i=1,..3
+ * Children of ABCD in level 3 are swap(parent,2,i) i=2,3
  *
- * Childs of BACD in level 2 are swap(BACD,1,i), i=0,..3
+ * Children of BACD in level 2 are swap(BACD,1,i), i=0,..3
  * etc
  *
  * Mmmm.... Maybe painting the tree is simpler
