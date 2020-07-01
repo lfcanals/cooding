@@ -17,7 +17,7 @@ public class Tree<T> {
     final Deque<Node<T>> queue = new ArrayDeque<Node<T>>();
     queue.add(root);
     while( ! queue.isEmpty() ) {
-        final Node<T> n = queue.remove();
+        final Node<T> n = queue.poll();
         f.accept(n);
         if(n.child[0]!=null) queue.add(n.child[0]);
         if(n.child[1]!=null) queue.add(n.child[1]);
