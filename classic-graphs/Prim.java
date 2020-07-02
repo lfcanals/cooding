@@ -1,6 +1,12 @@
 import java.util.*;
 
 
+/**
+ * Prim calculates de Minumun Tree that covers all nodes in a graph (MST).
+ * O( E log V )
+ *    O(log V) because of the priority queue resort
+ *    O(E+V) = O(E) for each of the edges we need to evaluate
+ */
 public class Prim {
   public static class Link {
     public int from,to,weight;
@@ -86,7 +92,16 @@ public class Prim {
       // wNode = node minimum weight to visit
       final WeightedNode wNode = pendingVertices.poll();
       visited.add(wNode.node);
+
+      // add wNode to graph
       mstGraph.addLink(wNode.linkFromPrevious);
+
+      // for(w : all neighbours of wNode) {
+      //    if(weight of link from wNode to w < w.weight) {
+      //        w.weight = Min(w.weight, weight link from wNode to w)
+      //        w.linkToPrevious = link from wNode to w
+      //    }
+      // }
       for(final Link link : graph.links[wNode.node]) {
         //if(visited.contains(link.to)) return;
         final WeightedNode wNeighbour = aux.get(link.to);
