@@ -1,6 +1,5 @@
-# GooooOOOoo....
+# CooooOOOool....
 
-Just a coding examples I've created during my
-preparation.
+Just a coding examples I've created to enjoy cool coding
 
 
