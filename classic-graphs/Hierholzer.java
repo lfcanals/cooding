@@ -5,6 +5,18 @@ import java.util.*;
  *
  * Assuming it's possible, that's iif #vertex_with_odd_edges = 0
  *
+ *
+ * 1st: Start from u (u has 2k vertex; if none, whatever)
+ *      Cycle from u to u not repeating vertex
+ *      Add this cycle to the path
+ *
+ * 2nd: take one node adjacent to the path: v
+ *      Cycle from v to v using unvisited vertex
+ *      Add this cycle to the path (as a "subcycle" in node v)
+ *
+ * etc
+ *
+ *
  */
 public class Hierholzer {
   /**
