@@ -2,6 +2,17 @@ import java.util.*;
 
 /**
  * Get the k-highest values of an array of numbers.
+ *
+ *
+ * The ide behind:
+ *      Quasy quick-sort:
+ *
+ *          Search pivot and place values higher to one side
+ *                                        smaller to other side
+ *          If size of highest is K => Hurra!!
+ *          If size of highest > K => reaply to highest
+ *          If size highest < K => take missing elements from smallest:
+ *                          i.e. look for k-size(highest) top elements in
  */
 public class TopK {
   private static final Random rand = new Random();

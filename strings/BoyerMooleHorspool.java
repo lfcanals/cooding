@@ -1,6 +1,35 @@
 /**
  * Searches the pattern moving from left to right but checking from right to 
  * left.... so crazy! But efficient.
+ *
+ * GCAATGCCTATG... = s
+ * TATGTG = p
+ *
+ * 1.   G C A A T G CCTATG...
+ *      T A T G T G
+ *                i
+ *      
+ *      Moves i back until  ... G!=A, here
+ *
+ *      G C A A T G CCTATG...
+ *      T A T G T G
+ *            i   
+ *
+ *      Where is a A in the pattern? In position 2.
+ *      So lets shift the pattern to align p(2) with the mismatched A and retry
+ *
+ * 2.   G C A A T G C C T A T G...
+ *          T A T G T G
+ *                    i
+ *
+ *      Where is a C in the pattern.... nowhere!! Shift to the next block
+ *
+ * 3.   G C A A T G C C T A T G...
+ *                      T A T G T G
+ *                                i
+ *
+ * etc...
+ *
  */
 public class BoyerMooleHorspool {
   /**
@@ -48,8 +77,19 @@ public class BoyerMooleHorspool {
             pattern.length() - 1 - i;
     }
 
+    // Starts with pattern at the beginning of string: i=length(pattern)-1
+    // Each iteration :
+    //      check backwards p(j)=S(i) i--,j-- j from end of p
+    //      oohhhh a failure in "i"
+    //          then replace everything such that: p(something)==S(i)
+    //          continue the iteration
+    //      hurra: p==S nice!
+    //
+
     for(int i=pattern.length()-1; i<string.length();
-        i += shift[((int)string.charAt(i))]) {
+                i += shift[((int)string.charAt(i))]) {
+
+      // Compare pattern = string : Pk=Sm, ..., P1=S(m-k+1)
       boolean match = true;
       for(int j = pattern.length() - 1; j>=0; j--) {
         if(pattern.charAt(j) != string.charAt(i-pattern.length()+1+j)) {
