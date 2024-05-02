@@ -6,6 +6,18 @@ import java.util.*;
  * O( E log V )
  *    O(log V) because of the priority queue resort
  *    O(E+V) = O(E) for each of the edges we need to evaluate
+ *
+ *
+ * The idea is:
+ *      tree = new Tree();
+ *      tree.add(one random node of the Graph):
+ *      Repeat until all nodes in tre:
+ *          take the node in graph such that:
+ *              node not still in tree
+ *              direct distance to node is min from rest of nodes in tree
+ *          tree.add(node)
+ *  
+ *      
  */
 public class Prim {
   public static class Link {
