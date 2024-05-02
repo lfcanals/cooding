@@ -2,6 +2,17 @@ import java.util.*;
 
 /**
  * Detection (AND COLOURING !!) of a graph if it's bipartite, or not.
+ *
+ * Bipartite graph:
+ *
+ *      we can create TWO SETS: A, B
+ *      such that
+ *      every node a from A only connects with nodes b from B
+ *      every node b from B only connects with nodes a from A
+ *      no node from B connects to B, no node from A connects to A
+ *
+ *
+ *  Idea of Prim: BFS or DFS go thorugh the graph colouring
  */
 public class Bipartite {
   public static class Graph {
