@@ -39,10 +39,9 @@ public class ColouringWelshPowell {
    *    2.- While the LIST is not empty:
    *    3.-   node = remove from LIST node with highest degree
    *    4.-   colour node with new COLOUR  
-   *    5.-   for(node : LIST):
-   *    6.-     if(colour all neighbours(node) != COLOUR):
-   *    7.-       colour node with COLOUR
-   *    8.-       remove node from LIST      
+   *    5.-   for(x: LIST and allNeighbours(x) are not coloured with COLOUR):
+   *    7.-       colour x with COLOUR
+   *    8.-       remove x from LIS
    *
    * @return a list of sets, each set contains nodes with same color.
    */
