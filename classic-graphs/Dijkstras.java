@@ -1,5 +1,27 @@
 import java.util.*;
 
+/**
+ * Idea behind Dijkstra:
+ *
+ *  Input: graph and startNode
+ *  Output: array min distances to each node from startNode
+ *
+ *  Logic:
+ *      Tenemos un conjunto de "nodosVisitados"
+ *      nodosVisitados.add(startNode);
+ *      currentNode = startNode
+ *
+ *      Repetir hasta visitar todos nodos:
+ *          anotamos en los nodos vecinos de "currentNode"
+ *              el camino mas corto hasta ellos desde startNode
+ *
+ *          currentNode = buscamos entre los vecinos de nodos visitados 
+ *              el que acumula el camino 
+ *              mas corto desde startNode
+ *
+ *          nodosVisitados.add(currentNode);    
+ *
+ */
 public class Dijkstras {
   public static class WeightedVertex {
       public final int weight;
